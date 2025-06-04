@@ -23,23 +23,100 @@
         </div>
     </header>
     <div class="container">
+        <section class="carousel" id="carousel">
+            <div class="carousel-item active">
+                <h2>Disciplina</h2>
+                <p>xxx</p>
+            </div>
 
+            <div class="carousel-item">
+                <h2>Introdução e Propósito</h2>
+                <p>Nosso grupo escolheu como foco do projeto a construção de uma galeria de artes online. O objetivo é
+                    dar mais visibilidade para a artista florestana Conceição Cahú e suas obras feitas, visto que o seu
+                    atual memorial está fechado, o que inviabiliza a popularização de conhecer suas obras e a artista.
+                </p>
+            </div>
+            <div class="carousel-nav" aria-label="Navegação do carrossel">
+                <button id="prevBtn" aria-controls="carousel" aria-label="Slide anterior" title="Slide anterior"
+                    type="button">&#10094;</button>
+                <button id="nextBtn" aria-controls="carousel" aria-label="Próximo slide" title="Próximo slide"
+                    type="button">&#10095;</button>
+            </div>
+        </section>
+        <section class="creators" id="creators">
+            <h2>Criadoras do site</h2>
+            <div class="creator">
+                <img src="#" alt="Foto da Criadora 1" tabindex="0" />
+                <p>Criadora 1</p>
+            </div>
+            <div class="creator">
+                <img src="#" alt="Foto da Criadora 2" tabindex="0" />
+                <p>Criadora 2</p>
+            </div>
+            <div class="creator">
+                <img src="#" alt="Foto da Criadora 3" tabindex="0" />
+                <p>Criadora 3</p>
+
+            </div>
+        </section>
     </div>
-
-
     <footer>
         <div style="display: flex; flex-direction: row; justify-content: space-around;">
             <ul>
                 <li><a href="#home">Início</a></li>
-                <li><a href="#">Biografia</a></li>
-                <li><a href="#">Galeria</a></li>
-                <li><a href="#">Vídeo</a></li>
+                <li><a href="#carousel">Carrossel</a></li>
+                <li><a href="#creators">Criadoras</a></li>
             </ul>
             <img src="/img/logo.png" alt="Logo" width="150px">
         </div>
         <p class="copyright">IFSertãoPE © 2025</p>
     </footer>
 
+    <script>
+        (() => {
+            const slides = document.querySelectorAll('.carousel-item');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                    slide.setAttribute('aria-hidden', i !== index);
+                });
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    showPrev();
+                } else if (e.key === 'ArrowRight') {
+                    showNext();
+                }
+            });
+
+            setInterval(showNext, 10000);
+
+            showSlide(currentIndex);
+
+            const header = document.querySelector('header');
+            header.addEventListener('dblclick', () => {
+                document.body.classList.toggle('dark');
+            });
+        })();
+    </script>
 </body>
 
 </html>
