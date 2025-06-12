@@ -51,7 +51,7 @@
                     <textarea name="comentario" placeholder="Deixe um comentário..."></textarea>
                     <input type="text" name="nome" class="nome" placeholder="Seu nome">
                     <br>
-                    <a style="text-decoration: none; color: white;" href="/cliente/html/index.html">Avaliar</a>
+                    <a style="text-decoration: none; color: white;" href="principal.html">Avaliar</a>
                 </form>
             </section>
         </div>
