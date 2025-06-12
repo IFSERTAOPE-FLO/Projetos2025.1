@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Galeria Virtual</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/principal.css">
-    <link rel="shortcut icon" type="imagex/png" href="/img/logo.png">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="shortcut icon" type="imagex/png" href="img/logo.png">
 </head>
 
 <body>
     <header id="home">
-        <img src="/img/logo.png" alt="Logo">
+        <img src="img/logo.png" alt="Logo">
         <div>
             <h1>Galeria Virtual</h1>
             <h1>de Conceição Cahú</h1>
             <nav class="navbar" aria-label="Navegação principal">
                 <a href="principal.html" class="active" aria-current="page">Galeria</a>
                 <a href="about.html">Sobre</a>
-                <a href="feedback.html">Feedback</a>
             </nav>
         </div>
     </header>
@@ -39,24 +38,38 @@
                     tabindex="-1">Fase 4</button>
             </nav>
             <article id="bio-geral" class="bio-content">
-                <p>xxx</p>
+                <p>xxxxxxxxxxxxxxxxxxxxxxxx</p>
+            </article>
+            <article id="phase1" class="bio-content" role="tabpanel" aria-labelledby="tab-phase1" hidden>
+                <p>fase 1</p>
+            </article>
+            <article id="phase2" class="bio-content" role="tabpanel" aria-labelledby="tab-phase2" hidden>
+                <p>fase 2</p>
+            </article>
+            <article id="phase3" class="bio-content" role="tabpanel" aria-labelledby="tab-phase3" hidden>
+                <p>fase 3</p>
+            </article>
+            <article id="phase4" class="bio-content" role="tabpanel" aria-labelledby="tab-phase4" hidden>
+                <p>fase 4</p>
             </article>
         </section>
 
         <section id="galeria">
             <h2>Exposição de Quadros</h2>
             <div class="galeria-grid" role="list">
-                <div class="card" role="listitem" tabindex="0" aria-label="Quadro Noite Estrelada"
-                    data-title="A Noite Estrelada" data-year="1889"
-                    data-description="A obra retrata a vista da janela de um quarto do hospício de Saint-Rémy-de-Provence, pouco antes do nascer do sol, com a adição de um vilarejo idealizado pelo artista"
-                    data-img="https://images.memphistours.com/large/e97679081a783f0b48a4c95f61d79ba0.jpg">
-                    <img src="https://images.memphistours.com/large/e97679081a783f0b48a4c95f61d79ba0.jpg"
-                        alt="Quadro Amanhecer" class="paint-image" />
-                    <div class="paint-info">
-                        <span class="paint-title">Noite Estrelada</span>
-                        <span class="paint-year">1889</span>
+                <a href="teste.php?nomequadro=A Noite Estrelada">
+                    <div class="card" role="listitem" tabindex="0" aria-label="Quadro Noite Estrelada"
+                        data-title="A Noite Estrelada" data-year="1889"
+                        data-description="A obra retrata a vista da janela de um quarto do hospício de Saint-Rémy-de-Provence, pouco antes do nascer do sol, com a adição de um vilarejo idealizado pelo artista"
+                        data-img="https://images.memphistours.com/large/e97679081a783f0b48a4c95f61d79ba0.jpg">
+                        <img src="https://images.memphistours.com/large/e97679081a783f0b48a4c95f61d79ba0.jpg"
+                            alt="Quadro Amanhecer" class="paint-image" />
+                        <div class="paint-info">
+                            <span class="paint-title">Noite Estrelada</span>
+                            <span class="paint-year">1889</span>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <div class="card" role="listitem" tabindex="0" aria-label="Quadro Noite Estrelada"
                     data-title="A Noite Estrelada" data-year="1889"
                     data-description="A obra retrata a vista da janela de um quarto do hospício de Saint-Rémy-de-Provence, pouco antes do nascer do sol, com a adição de um vilarejo idealizado pelo artista"
@@ -103,13 +116,13 @@
                 <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#video">Vídeo</a></li>
             </ul>
-            <img src="/img/logo.png" alt="Logo" width="150px">
+            <img src="img/logo.png" alt="Logo" width="150px">
         </div>
         <p class="copyright">IFSertãoPE © 2025</p>
     </footer>
 
-    <script src="/script.js"></script>
-    
+    <script src="script.js"></script>
+
 </body>
 
 </html>

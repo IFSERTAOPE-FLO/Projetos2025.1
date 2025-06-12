@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Página de Feedback</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/principal.css">
-    <link rel="stylesheet" href="/css/feedback.css">
-    <link rel="shortcut icon" type="imagex/png" href="/img/logo.png">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/feedback.css">
+    <link rel="shortcut icon" type="imagex/png" href="img/logo.png">
 </head>
 
 <body>
     <header id="home">
-        <img src="/img/logo.png" alt="Logo">
+        <img src="img/logo.png" alt="Logo">
         <div>
             <h1>Galeria Virtual</h1>
             <h1>de Conceição Cahú</h1>
@@ -32,6 +32,10 @@
                     <h1>Deixe seu Feedback:</h1>
                 </div>
                 <form>
+                    <div>
+                       Nome da Obra Avaliada: <br>
+                           <input type="text" name="nomequadro" value="<?php echo $_GET['nomequadro']; ?>" disabled>
+                    </div>
                     <div class="avaliar">
                         <input type="radio" name="estrela" id="estrela1" value="1"><label for="estrela1"
                         class="estrela">&#9733;</label>
@@ -69,12 +73,10 @@
                 <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#video">Vídeo</a></li>
             </ul>
-            <img src="/img/logo.png" alt="Logo" width="150px">
+            <img src="img/logo.png" alt="Logo" width="150px">
         </div>
         <p class="copyright">IFSertãoPE © 2025</p>
     </footer>
-
-    <script src="/script.js"></script>
 
 </body>
 
