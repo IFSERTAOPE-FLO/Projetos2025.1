@@ -17,7 +17,7 @@
             <h1>Galeria Virtual</h1>
             <h1>de Conceição Cahú</h1>
             <nav class="navbar" aria-label="Navegação principal">
-                <a href="principal.html" class="active" aria-current="page">Galeria</a>
+                <a href="principal.php" class="active" aria-current="page">Galeria</a>
                 <a href="about.html">Sobre</a>
             </nav>
         </div>
@@ -54,50 +54,39 @@
             </article>
         </section>
 
+        <?php
+        include("conexao.php");
+        ?>
+
         <section id="galeria">
             <h2>Exposição de Quadros</h2>
             <div class="galeria-grid" role="list">
-                <a href="feedback.php?nomequadro=A Noite Estrelada 1">
-                    <div class="card" role="listitem" tabindex="0" aria-label="Quadro Noite Estrelada"
-                        data-title="A Noite Estrelada" data-year="1889"
-                        data-description="A obra retrata a vista da janela de um quarto do hospício de Saint-Rémy-de-Provence, pouco antes do nascer do sol, com a adição de um vilarejo idealizado pelo artista"
-                        data-img="https://images.memphistours.com/large/e97679081a783f0b48a4c95f61d79ba0.jpg">
-                        <img src="https://images.memphistours.com/large/e97679081a783f0b48a4c95f61d79ba0.jpg"
-                            alt="Quadro Amanhecer" class="paint-image" />
-                        <div class="paint-info">
-                            <span class="paint-title">Noite Estrelada</span>
-                            <span class="paint-year">1889</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="feedback.php?nomequadro=A Noite Estrelada 2">
-                    <div class="card" role="listitem" tabindex="0" aria-label="Quadro Noite Estrelada"
-                        data-title="A Noite Estrelada" data-year="1889"
-                        data-description="A obra retrata a vista da janela de um quarto do hospício de Saint-Rémy-de-Provence, pouco antes do nascer do sol, com a adição de um vilarejo idealizado pelo artista"
-                        data-img="https://images.memphistours.com/large/e97679081a783f0b48a4c95f61d79ba0.jpg">
-                        <img src="https://images.memphistours.com/large/e97679081a783f0b48a4c95f61d79ba0.jpg"
-                            alt="Quadro Amanhecer" class="paint-image" />
-                        <div class="paint-info">
-                            <span class="paint-title">Noite Estrelada</span>
-                            <span class="paint-year">1889</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="feedback.php?nomequadro=A Noite Estrelada 3">
-                    <div class="card" role="listitem" tabindex="0" aria-label="Quadro Noite Estrelada"
-                        data-title="A Noite Estrelada" data-year="1889"
-                        data-description="A obra retrata a vista da janela de um quarto do hospício de Saint-Rémy-de-Provence, pouco antes do nascer do sol, com a adição de um vilarejo idealizado pelo artista"
-                        data-img="https://images.memphistours.com/large/e97679081a783f0b48a4c95f61d79ba0.jpg">
-                        <img src="https://images.memphistours.com/large/e97679081a783f0b48a4c95f61d79ba0.jpg"
-                            alt="Quadro Amanhecer" class="paint-image" />
-                        <div class="paint-info">
-                            <span class="paint-title">Noite Estrelada</span>
-                            <span class="paint-year">1889</span>
-                        </div>
-                    </div>
-                </a>
+                <?php
+                $resultado = $conexao->query("SELECT * FROM imagens ORDER BY data_upload DESC");
+
+                while ($img = $resultado->fetch_assoc()) {
+                    $titulo = htmlspecialchars($img['titulo']);
+                    $descricao = htmlspecialchars($img['descricao']);
+                    $imagem = "uploads/" . $img['nome_arquivo'];
+                    $ano = "Ano desconhecido"; 
+                    $alt = "Quadro " . $titulo;
+
+                    echo "<a href='feedback.php?nomequadro=" . urlencode($titulo) . "'>";
+                    echo "<div class='card' role='listitem' tabindex='0' aria-label='Quadro $titulo'";
+                    echo " data-title='$titulo'";
+                    echo " data-year='$ano'";
+                    echo " data-description='$descricao'";
+                    echo " data-img='$imagem'>";
+                    echo "<img src='$imagem' alt='$alt' class='paint-image' />";
+                    echo "<div class='paint-info'>";
+                    echo "<span class='paint-title'>$titulo</span>";
+                    echo "<span class='paint-year'>$ano</span>";
+                    echo "</div></div></a>";
+                }
+                ?>
             </div>
         </section>
+
 
         <section id="video">
             <p>colocar o vídeo</p>

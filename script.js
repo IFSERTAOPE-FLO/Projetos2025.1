@@ -26,7 +26,7 @@ const modalOverlay = document.querySelector(".modal-overlay");
 const modalImage = modalOverlay.querySelector(".modal-image");
 const modalDescription = modalOverlay.querySelector(".modal-description");
 const modalCloseBtn = modalOverlay.querySelector(".modal-close");
-const paintCards = document.querySelectorAll(".paint-card");
+const paintCards = document.querySelectorAll(".card");
 
 paintCards.forEach((card) => {
   card.addEventListener("click", () => {
