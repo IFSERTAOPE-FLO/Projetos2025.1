@@ -62,7 +62,7 @@ textarea {
     align-items: flex-start;
 }
 
-form a {
+form button {
     background-color: #584132;
     color: white;
     padding: 10px 20px;
@@ -72,7 +72,7 @@ form a {
     transition: background-color 0.3s ease;
 }
 
-form a:hover {
+form button:hover {
     background-color: #8a6750;
 }
 
