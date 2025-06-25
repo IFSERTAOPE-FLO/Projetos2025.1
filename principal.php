@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Galeria Virtual</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/principal.css?<?php echo time, ?>" >
+    <link rel="stylesheet" href="css/principal.css?<?php echo time(); ?>" >
     <link rel="shortcut icon" type="imagex/png" href="img/logo.png">
 </head>
 
@@ -57,6 +57,18 @@
                     <li>Os anos 90, registro de sua maturidade e ousadia
                         para enfrentar o óleo sobre tela.</li>
                 </ul>
+            </article>
+            <article id="phase1" class="bio-content" role="tabpanel" aria-labelledby="tab-phase1" hidden>
+                <h4>Início</h4>
+                <p>A aventura parece ser uma marca fatal na vida de Conceição Cahú.
+                    Ainda muito jovem, deixa a paisagem agreste do sertão pernambucano,
+                    e foi bater no mar, no Recife, em busca de horizontes mais largos 
+                    para sua arte. Conheceu o êxito, mas não o conformismo. em 1973, 
+                    estava em São Paulo, com uma nova cabeça, mas com a mesma 
+                    inconfundível qualidade da sua arte, que se manisfesta em
+                    vários jornais, revistas, agências de publicidade, exposições,
+                    nas suas mlitâncias ou em charges e ilustrações primorosas no 
+                    jornal Gazeta Mercantil.</p>
             </article>
             <article id="phase2" class="bio-content" role="tabpanel" aria-labelledby="tab-phase2" hidden>
                 <h4>Anos 70</h4>
