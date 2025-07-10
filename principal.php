@@ -154,7 +154,10 @@
 
 
         <section id="video">
-            <p>colocar o vídeo</p>
+        <h2>Vídeo</h2>
+            <div  style="text-align: center;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jP_bSfbj5k0?si=lLQOTtBgIlI-PAzh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </section>
     </div>
 
