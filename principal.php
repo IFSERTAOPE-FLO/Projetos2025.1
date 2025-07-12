@@ -69,6 +69,7 @@
                     vários jornais, revistas, agências de publicidade, exposições,
                     nas suas mlitâncias ou em charges e ilustrações primorosas no 
                     jornal Gazeta Mercantil.</p>
+                    <!-- <img src="img/Caricatura para a Gazeta .jpg" alt="" width="300px"> -->
             </article>
             <article id="phase2" class="bio-content" role="tabpanel" aria-labelledby="tab-phase2" hidden>
                 <h4>Anos 70</h4>
