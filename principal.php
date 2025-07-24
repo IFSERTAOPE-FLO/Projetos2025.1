@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Galeria Virtual</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/principal.css?<?php echo time(); ?>" >
+    <link rel="stylesheet" href="css/principal.css?<?php echo time(); ?>">
     <link rel="shortcut icon" type="imagex/png" href="img/logo.png">
 </head>
 
@@ -37,7 +37,7 @@
                 <button class="aba" role="tab" aria-selected="false" aria-controls="phase4" id="tab-phase4"
                     tabindex="-1">Fase 4</button>
             </nav>
-            <article id="bio-geral" class="bio-content" >
+            <article id="bio-geral" class="bio-content">
                 <p>No ano de 1944, a pequena cidade de Floresta do Navio, no interior de Pernambuco, serviu de berço
                     para esta que se tornou uma ilustre representante dos artistas nordestinos.</p>
                 <p>Maria da Conceição de Souza Cahú deixou Floresta ainda jovem, foi para Recife estudar Belas Artes e,
@@ -60,16 +60,18 @@
             </article>
             <article id="phase1" class="bio-content" role="tabpanel" aria-labelledby="tab-phase1" hidden>
                 <h4>Início</h4>
-                <p>A aventura parece ser uma marca fatal na vida de Conceição Cahú.
-                    Ainda muito jovem, deixa a paisagem agreste do sertão pernambucano,
-                    e foi bater no mar, no Recife, em busca de horizontes mais largos 
-                    para sua arte. Conheceu o êxito, mas não o conformismo. em 1973, 
-                    estava em São Paulo, com uma nova cabeça, mas com a mesma 
-                    inconfundível qualidade da sua arte, que se manisfesta em
-                    vários jornais, revistas, agências de publicidade, exposições,
-                    nas suas mlitâncias ou em charges e ilustrações primorosas no 
-                    jornal Gazeta Mercantil.</p>
-                    <!-- <img src="img/Caricatura para a Gazeta .jpg" alt="" width="300px"> -->
+                <div style="display: flex; flex-direction: row;">
+                    <p>A aventura parece ser uma marca fatal na vida de Conceição Cahú.
+                        Ainda muito jovem, deixa a paisagem agreste do sertão pernambucano,
+                        e foi bater no mar, no Recife, em busca de horizontes mais largos
+                        para sua arte. Conheceu o êxito, mas não o conformismo. em 1973,
+                        estava em São Paulo, com uma nova cabeça, mas com a mesma
+                        inconfundível qualidade da sua arte, que se manisfesta em
+                        vários jornais, revistas, agências de publicidade, exposições,
+                        nas suas mlitâncias ou em charges e ilustrações primorosas no
+                        jornal Gazeta Mercantil.</p>
+                    <img src="img/Caricatura para a Gazeta .jpg" alt="Caricatura para a Gazeta" width="300px">
+                </div>
             </article>
             <article id="phase2" class="bio-content" role="tabpanel" aria-labelledby="tab-phase2" hidden>
                 <h4>Anos 70</h4>
@@ -111,10 +113,17 @@
             </article>
             <article id="phase4" class="bio-content" role="tabpanel" aria-labelledby="tab-phase4" hidden>
                 <h4>Anos 90</h4>
-                <p>O que se tem a destacar é o mistério que se arremessa de cada uma destas pinturas e das suas geometrias simples. São os milagres da arte. No exemplo de Conceição Cahú, “consistência” liga-se à consistência artesanal, que é toda a sua verdade, o ponto de união entre sensível e inteligível. </p>
+                <p>O que se tem a destacar é o mistério que se arremessa de cada uma destas pinturas e das suas
+                    geometrias simples. São os milagres da arte. No exemplo de Conceição Cahú, “consistência” liga-se à
+                    consistência artesanal, que é toda a sua verdade, o ponto de união entre sensível e inteligível.
+                </p>
                 <p>Começa, então, a permear as informações económicas e a elite empresarial brasileira com imaginação,
                     colorido e técnica.</p>
-                <p>Os quadros de Conceição Cahú seriam reconhecidos como retratos da … humana se estivessem em Manaus ou Nova York. Com essa inexplicável capacidade que têm os artistas de serem intemporais no seu próprio tempo e serem do mundo nas suas aldeias. Conceição Cahú junta índios e civilização, mulheres e paisagens, Xingú e Capibaribe, como juntaria idealmente Manhattans e Rasos da Catarina, Volgas e seus Riachos do Navio.</p>
+                <p>Os quadros de Conceição Cahú seriam reconhecidos como retratos da … humana se estivessem em Manaus ou
+                    Nova York. Com essa inexplicável capacidade que têm os artistas de serem intemporais no seu próprio
+                    tempo e serem do mundo nas suas aldeias. Conceição Cahú junta índios e civilização, mulheres e
+                    paisagens, Xingú e Capibaribe, como juntaria idealmente Manhattans e Rasos da Catarina, Volgas e
+                    seus Riachos do Navio.</p>
                 <p>Garibaldi Otávio, jornalista, Editor-sênior da Gazeta Mercantil de São Paulo</p>
             </article>
 
@@ -134,7 +143,7 @@
                     $titulo = htmlspecialchars($img['titulo']);
                     $descricao = htmlspecialchars($img['descricao']);
                     $imagem = "uploads/" . $img['nome_arquivo'];
-                    $ano = "Ano desconhecido"; 
+                    $ano = "Ano desconhecido";
                     $alt = "Quadro " . $titulo;
 
                     echo "<a href='feedback.php?nomequadro=" . urlencode($titulo) . "'>";
@@ -155,9 +164,12 @@
 
 
         <section id="video">
-        <h2>Vídeo</h2>
-            <div  style="text-align: center;">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/jP_bSfbj5k0?si=lLQOTtBgIlI-PAzh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2>Vídeo</h2>
+            <div style="text-align: center;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jP_bSfbj5k0?si=lLQOTtBgIlI-PAzh"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
     </div>
