@@ -293,6 +293,31 @@ footer ul {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 0;
+  width: 30%;
+}
+
+#form-footer{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+#form-footer input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+#form-footer button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #584132;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+#form-footer button:hover {
+  background-color: #8a6750;
 }
 
 footer ul li {
@@ -315,6 +340,14 @@ footer .copyright {
   font-size: 13px;
   color: #aaa;
   margin-bottom: 0;
+}
+
+.footer-content{
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0% 20px;
 }
 
 @media (max-width: 560px) {

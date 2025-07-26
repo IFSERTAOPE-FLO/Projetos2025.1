@@ -57,7 +57,7 @@ function buscarImagem($conexao, $nomequadro)
         </div>
     </header>
     <div class="container">
-        <section>
+        <section id="media-avaliacoes">
             <h2>Média das Avaliações de Cada Obra</h2>
             <?php if ($resultadoMedia->num_rows > 0): ?>
                 <table>
@@ -78,7 +78,7 @@ function buscarImagem($conexao, $nomequadro)
                 <p style="text-align: center;">Nenhuma avaliação registrada ainda.</p>
             <?php endif; ?>
         </section>
-        <section class="destaques">
+        <section id="melhor-avaliacao" class="destaques">
             <h2>Obra com Melhor Avaliação</h2>
             <div class="obras-destaques">
                 <img width="300px" src="<?= buscarImagem($conexao, $melhor['nomequadro']) ?>"
@@ -90,7 +90,7 @@ function buscarImagem($conexao, $nomequadro)
                 </div>
             </div>
         </section>
-        <section class="destaques">
+        <section id="pior-avaliacao" class="destaques">
             <h2>Obra com Pior Avaliação</h2>
             <div class="obras-destaques">
                 <img width="300px" src="<?= buscarImagem($conexao, $pior['nomequadro']) ?>"
@@ -102,15 +102,54 @@ function buscarImagem($conexao, $nomequadro)
                 </div>
             </div>
         </section>
+        <section id="comentarios">
+            <h2>Comentários dos Usuários</h2>
+
+            <?php
+            include("conexao.php");
+
+            $query = "SELECT nome, comentario, data_envio FROM feedback_rodape ORDER BY data_envio DESC LIMIT 5";
+            $resultado = $conexao->query($query);
+
+            if ($resultado && $resultado->num_rows > 0) {
+                while ($row = $resultado->fetch_assoc()) {
+                    $nome = htmlspecialchars($row['nome']);
+                    $comentario = nl2br(htmlspecialchars($row['comentario']));
+                    $data = date('d/m/Y H:i', strtotime($row['data_envio']));
+
+                    echo "<div style='border: 1px solid #ccc; border-radius: 8px; padding: 12px; margin: 10px 0; background: #f8f8f8'>";
+                    echo "<strong>$nome</strong> <small style='color: gray;'>($data)</small><br>";
+                    echo "<p style='margin-top: 6px;'>$comentario</p>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>Nenhum comentário enviado ainda.</p>";
+            }
+            ?>
+        </section>
+
     </div>
     <footer>
-        <div style="display: flex; flex-direction: row; justify-content: space-around;">
+        <div class="footer-content">
             <ul>
                 <li><a href="#home">Início</a></li>
-                <li><a href="#carousel">Carrossel</a></li>
-                <li><a href="#creators">Criadoras</a></li>
+                <li><a href="#media-avaliacoes">Média geral</a></li>
+                <li><a href="#melhor-avaliacao">Melhor Avaliação</a></li>
+                <li><a href="#pior-avaliacao">Pior Avaliação</a></li>
+                <li><a href="#comentarios">Comentários</a></li>
             </ul>
             <img src="img/logo.png" alt="Logo" width="150px">
+            <div id="form-footer">
+                <h3>Deixe seu feedback</h3>
+                <form class="footer-form" action="salvar_feedback.php" method="POST">
+
+                    <input style="width: 60%;" type="text" name="comentario" class="form" placeholder="Seu comentário"
+                        required>
+                    <input style="width: 30%;" type="text" name="nome" class="form" placeholder="Seu nome" required>
+                    <button class="btn" type="submit">Comentar</button>
+                </form>
+
+            </div>
         </div>
         <p class="copyright">IFSertãoPE © 2025</p>
     </footer>

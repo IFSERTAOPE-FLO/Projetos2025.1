@@ -1,3 +1,9 @@
+<?php
+if (isset($_GET['feedback']) && $_GET['feedback'] === 'enviado') {
+    echo "<script>alert('Obrigado pelo seu comentário!');</script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -183,7 +189,7 @@
     </div>
 
     <footer>
-        <div style="display: flex; flex-direction: row; justify-content: space-around;">
+        <div class="footer-content">
             <ul>
                 <li><a href="#home">Início</a></li>
                 <li><a href="#biografia">Biografia</a></li>
@@ -191,6 +197,17 @@
                 <li><a href="#video">Vídeo</a></li>
             </ul>
             <img src="img/logo.png" alt="Logo" width="150px">
+            <div id="form-footer">
+                <h3>Deixe seu feedback</h3>
+                <form class="footer-form" action="salvar_feedback.php" method="POST">
+
+                    <input style="width: 60%;" type="text" name="comentario" class="form" placeholder="Seu comentário"
+                        required>
+                    <input style="width: 30%;" type="text" name="nome" class="form" placeholder="Seu nome" required>
+                    <button class="btn" type="submit">Comentar</button>
+                </form>
+
+            </div>
         </div>
         <p class="copyright">IFSertãoPE © 2025</p>
     </footer>

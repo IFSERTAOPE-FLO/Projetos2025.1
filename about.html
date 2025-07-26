@@ -68,18 +68,27 @@
         </section>
         <section class="relatorio">
             <h2>Relatório</h2>
-            <p><a style="font-style: italic;color: brown;" href="./relatorio.php">Confira aqui </a> um balanço geral a respeito das
-                avaliações dos quadros deixadas pelos visitantes do nosso site.</p>
+            <p><a style="font-style: italic;color: brown;" href="./relatorio.php">Confira aqui </a> um balanço geral arespeito das avaliações dos quadros deixadas pelos visitantes do nosso site.</p>
         </section>
     </div>
     <footer>
-        <div style="display: flex; flex-direction: row; justify-content: space-around;">
+        <div class="footer-content">
             <ul>
                 <li><a href="#home">Início</a></li>
                 <li><a href="#carousel">Carrossel</a></li>
                 <li><a href="#creators">Criadoras</a></li>
             </ul>
             <img src="img/logo.png" alt="Logo" width="150px">
+            <div id="form-footer">
+                <h3>Deixe seu feedback</h3>
+                <form class="footer-form" action="salvar_feedback.php" method="POST">
+
+                    <input style="width: 60%;" type="text" name="comentario" class="form" placeholder="Seu comentário" required>
+                    <input style="width: 30%;" type="text" name="nome" class="form" placeholder="Seu nome" required>
+                    <button class="btn" type="submit">Comentar</button>
+                </form>
+
+            </div>
         </div>
         <p class="copyright">IFSertãoPE © 2025</p>
     </footer>
