@@ -44,9 +44,11 @@
                         $descricao = htmlspecialchars($row['descricao']);
                         $imagem = "uploads/" . $row['nome_arquivo'];
 
-                        echo "<img id='imagem-obra' src='$imagem' alt='$titulo' width='400px' style='margin-top:25px; border-radius:10px'/>";
-                        echo "<h3 style='font-weight:bold;'>$titulo</h3>";
-                        echo "<p style='margin-top:-10px;'>$descricao</p>";
+                        echo "<div class='obra'>";
+                        echo "<img src='$imagem' alt='$titulo'/>";
+                        echo "<h3>$titulo</h3>";
+                        echo "<p>$descricao</p>";
+
                         $stmtMedia = $conexao->prepare("SELECT AVG(estrela) AS media FROM avaliacoes WHERE nomequadro = ?");
                         $stmtMedia->bind_param("s", $nomequadro);
                         $stmtMedia->execute();
@@ -56,12 +58,12 @@
                             $media = round($rowMedia['media'], 1);
                             $mediaInt = floor($media);
                             $estrelas = str_repeat("⭐", $mediaInt) . str_repeat("☆", 5 - $mediaInt);
-
-                            echo "<p style='margin-top: 5px; font-weight:bold;'>Avaliação média: <span style='color:gold;'>$estrelas</span> ($media)</p>";
+                            echo "<p class='avaliacao'>Avaliação média: <span>$estrelas</span> ($media)</p>";
                         } else {
-                            echo "<p>Avaliação média: N/A</p>";
+                            echo "<p class='avaliacao'>Avaliação média: N/A</p>";
                         }
 
+                        echo "</div>";
                     }
                 } else {
                     echo "<p>Obra não encontrada.</p>";
