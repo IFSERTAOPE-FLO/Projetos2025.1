@@ -149,19 +149,19 @@ if (isset($_GET['feedback']) && $_GET['feedback'] === 'enviado') {
                     $titulo = htmlspecialchars($img['titulo']);
                     $descricao = htmlspecialchars($img['descricao']);
                     $imagem = "uploads/" . $img['nome_arquivo'];
-                    $ano = "Ano desconhecido";
+                    // $ano = "Ano desconhecido";
                     $alt = "Quadro " . $titulo;
 
                     echo "<a href='feedback.php?nomequadro=" . urlencode($titulo) . "'>";
                     echo "<div class='card' role='listitem' tabindex='0' aria-label='Quadro $titulo'";
                     echo " data-title='$titulo'";
-                    echo " data-year='$ano'";
+                    // echo " data-year='$ano'";
                     echo " data-description='$descricao'";
                     echo " data-img='$imagem'>";
                     echo "<img src='$imagem' alt='$alt' class='paint-image' />";
                     echo "<div class='paint-info'>";
                     echo "<span class='paint-title'>$titulo</span>";
-                    echo "<span class='paint-year'>$ano</span>";
+                    // echo "<span class='paint-year'>$ano</span>";
                     echo "</div></div></a>";
                 }
                 ?>
